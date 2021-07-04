@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TextInput } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -10,6 +10,10 @@ export default function TabOneScreen() {
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      <View>
+        <Text style={styles.inputTitle}>input</Text>
+        <TextInput style={styles.input} defaultValue="sample text input" />
+      </View>
     </View>
   );
 }
@@ -29,4 +33,15 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
+  inputTitle: {
+    fontSize: 7,
+    paddingBottom: 5,
+  },
+  input: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    color: 'white',
+    padding: 10,
+  }
 });
